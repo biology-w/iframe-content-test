@@ -9,7 +9,7 @@
     <input id="one-input" />
     <div id="output">output</div>
     <button id="readButton">readButton</button>
-    <script>
+    <!-- <script>
       navigator.permissions.query({ name: "clipboard-read" }).then((status) => {
         if (status.state === "granted") {
           // 已授权
@@ -22,8 +22,8 @@
       if (!window.isSecureContext) {
         console.error("需在 HTTPS 或 localhost 中使用");
       }
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
       const oneInput = document.querySelector("#one-input");
       window.addEventListener("click", (e) => {
         console.log("input", oneInput);
@@ -34,7 +34,7 @@
           oneInput.setAttribute("value", "two");
         });
       });
-    </script>
+    </script> -->
     <script>
       function readFromClipboard() {
         // 创建一个隐藏的 textarea 元素
