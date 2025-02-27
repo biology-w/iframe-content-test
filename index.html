@@ -17,6 +17,9 @@
           console.log("需要请求授权", status);
         }
       });
+      if (!window.isSecureContext) {
+        console.error("需在 HTTPS 或 localhost 中使用");
+      }
     </script>
     <script>
       const oneInput = document.querySelector("#one-input");
