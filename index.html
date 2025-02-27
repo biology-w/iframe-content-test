@@ -8,7 +8,7 @@
   <body>
     <input id="one-input" />
     <script>
-      avigator.permissions.query({ name: "clipboard-read" }).then((status) => {
+      navigator.permissions.query({ name: "clipboard-read" }).then((status) => {
         if (status.state === "granted") {
           // 已授权
           console.log("status:已授权", status);
