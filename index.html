@@ -10,10 +10,11 @@
     <script>
       const oneInput = document.querySelector("#one-input");
       window.addEventListener("click", (e) => {
-        console.log("e", oneInput);
+        console.log("input", oneInput);
+        console.log("navigator", navigator.clipboard.readText);
         oneInput.setAttribute("value", "one");
         navigator.clipboard.readText().then((e) => {
-          console.log("e", e);
+          console.log("readText", e);
           oneInput.setAttribute("value", "two");
         });
       });
