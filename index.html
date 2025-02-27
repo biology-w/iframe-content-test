@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      const oneInput = document.querySelector("#one-input");
+      window.addEventListener("click", (e) => {
+        navigator.clipboard.readText().then((e) => {
+          oneInput.setAttribute("value", e);
+        });
+      });
+    </script>
   </head>
   <body>
-    <input />
+    <input id="one-input" />
   </body>
 </html>
