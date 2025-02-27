@@ -7,6 +7,7 @@
   </head>
   <body>
     <input id="one-input" />
+    <button id="readButton">readButton</button>
     <script>
       navigator.permissions.query({ name: "clipboard-read" }).then((status) => {
         if (status.state === "granted") {
@@ -32,6 +33,31 @@
           oneInput.setAttribute("value", "two");
         });
       });
+    </script>
+    <script>
+      function readFromClipboard() {
+        // 创建一个隐藏的 textarea 元素
+        const textarea = document.createElement("textarea");
+        document.body.appendChild(textarea);
+
+        // 触发粘贴操作
+        textarea.focus();
+        document.execCommand("paste");
+
+        // 获取剪切板内容
+        const text = textarea.value;
+
+        // 清理元素
+        document.body.removeChild(textarea);
+
+        console.log("剪切板内容：", text);
+        document.getElementById("output").innerText = text;
+      }
+
+      // 在按钮点击事件中调用
+      document
+        .getElementById("readButton")
+        .addEventListener("click", readFromClipboard);
     </script>
   </body>
 </html>
