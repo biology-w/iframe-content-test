@@ -8,6 +8,17 @@
   <body>
     <input id="one-input" />
     <script>
+      avigator.permissions.query({ name: "clipboard-read" }).then((status) => {
+        if (status.state === "granted") {
+          // 已授权
+          console.log("status:已授权", status);
+        } else {
+          // 需要请求授权
+          console.log("需要请求授权", status);
+        }
+      });
+    </script>
+    <script>
       const oneInput = document.querySelector("#one-input");
       window.addEventListener("click", (e) => {
         console.log("input", oneInput);
