@@ -7,6 +7,7 @@
     <script>
       const oneInput = document.querySelector("#one-input");
       window.addEventListener("click", (e) => {
+        console.log("e", e);
         navigator.clipboard.readText().then((e) => {
           console.log("e", e);
           oneInput.setAttribute("value", e);
